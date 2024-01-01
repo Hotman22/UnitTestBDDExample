@@ -4,6 +4,7 @@ import app.cash.turbine.test
 import com.otdev.unittestbddexemple.core.CoroutineDispatcherProvider
 import com.otdev.unittestbddexemple.domain.model.Message
 import com.otdev.unittestbddexemple.domain.model.User
+import com.otdev.unittestbddexemple.domain.usecase.interfaces.FakeUseCase
 import com.otdev.unittestbddexemple.domain.usecase.interfaces.GetChatMessagesUseCase
 import com.otdev.unittestbddexemple.domain.usecase.interfaces.SendTextMessageUseCase
 import com.otdev.unittestbddexemple.presentation.model.MessageUiModel
@@ -30,6 +31,7 @@ class ChatViewModelMockTest {
 
     private val getChatMessagesUseCase: GetChatMessagesUseCase = mockk()
     private val sendTextMessageUseCase: SendTextMessageUseCase = mockk()
+    private val fakeUseCase: FakeUseCase = mockk()
     private val coroutineDispatcherProvider = TestCoroutineDispatcherProvider()
     private val user: User = User("id", "name")
     private lateinit var viewModel: ChatViewModel
@@ -91,7 +93,7 @@ class ChatViewModelMockTest {
             getChatMessagesUseCase,
             sendTextMessageUseCase,
             user,
-            coroutineDispatcherProvider
+            coroutineDispatcherProvider,
         )
     }
 }

@@ -13,7 +13,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    viewModel { ChatViewModel(get(), get(), get(), get()) }
+    viewModel { ChatViewModel(get(), get(), get(), get(), ) }
 
     factory<GetChatMessagesUseCase> { GetChatMessagesUseCaseImpl(get()) }
     factory<SendTextMessageUseCase> { SendTextMessageUseCaseImpl(get()) }

@@ -78,7 +78,8 @@ class ChatViewModelTest {
                         type = Message.Type.Received
                     ),
                     MessageUiModel(
-                        text = "2nd message", type = Message.Type.Received
+                        text = "2nd message",
+                        type = Message.Type.Received
                     )
                 )
             )

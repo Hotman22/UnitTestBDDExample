@@ -2,7 +2,6 @@ package com.otdev.unittestbddexemple.domain.usecase
 
 import com.otdev.unittestbddexemple.domain.factory.MessageFactory
 import com.otdev.unittestbddexemple.domain.model.User
-import com.otdev.unittestbddexemple.domain.model.error.InvalidMessageException
 import com.otdev.unittestbddexemple.domain.repository.ChatMessagesRepository
 import com.otdev.unittestbddexemple.domain.usecase.interfaces.SendTextMessageUseCase
 

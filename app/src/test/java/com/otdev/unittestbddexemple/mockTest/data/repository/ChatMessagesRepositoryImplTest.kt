@@ -30,8 +30,9 @@ class ChatMessagesRepositoryImplTest {
 
             repository.getChatMessages(user).test {
                 val item = awaitItem()
-                assertEquals(item, messages)
+                assertEquals(messages, item)
             }
+
             coVerify(exactly = 1) { chatDataSource.getChatMessages(user) }
         }
 
@@ -42,14 +43,12 @@ class ChatMessagesRepositoryImplTest {
                 Message("id", "1st message", Date(), Message.Type.Received),
                 Message("id", "2nd message", Date(), Message.Type.Received)
             )
-            val textMessage = "2nd message"
-            val message = MessageFactory.fromText(textMessage)
             fakeDataSourceResponse(messages)
-            coEvery { chatDataSource.sendChatMessage(message, user) }  just Runs
+            coEvery { chatDataSource.sendChatMessage(messages[1], user) }  just Runs
 
-            repository.sendChatMessage(message, user)
+            repository.sendChatMessage(messages[1], user)
 
-            coVerify { chatDataSource.sendChatMessage(message, user) }
+            coVerify { chatDataSource.sendChatMessage(messages[1], user) }
         }
 
     private fun fakeDataSourceResponse(messages: List<Message>) {
