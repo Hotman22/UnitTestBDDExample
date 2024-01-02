@@ -61,7 +61,7 @@ class ChatViewModelTest {
             //Then
             viewModel.state.test {
                 val item = awaitItem()
-                assertEquals(item, stateResponse)
+                assertEquals(stateResponse, item)
             }
         }
 
@@ -90,7 +90,7 @@ class ChatViewModelTest {
             //Then
             viewModel.state.test {
                 val item = awaitItem()
-                assertEquals(item, stateResponse)
+                assertEquals(stateResponse, item)
             }
         }
 

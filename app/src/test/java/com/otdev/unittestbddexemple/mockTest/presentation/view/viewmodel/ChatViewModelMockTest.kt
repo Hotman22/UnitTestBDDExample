@@ -31,7 +31,6 @@ class ChatViewModelMockTest {
 
     private val getChatMessagesUseCase: GetChatMessagesUseCase = mockk()
     private val sendTextMessageUseCase: SendTextMessageUseCase = mockk()
-    private val fakeUseCase: FakeUseCase = mockk()
     private val coroutineDispatcherProvider = TestCoroutineDispatcherProvider()
     private val user: User = User("id", "name")
     private lateinit var viewModel: ChatViewModel
